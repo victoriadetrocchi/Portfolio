@@ -1,0 +1,697 @@
+/* ======================================================== */
+/* PORTFOLIO VICTORIA - STYLE.CSS (FINAL V3)  */
+/* ======================================================== */
+
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN (PALETA)
+   ========================================= */
+:root {
+    /* COLORES PRINCIPALES (Earth Tones) */
+    --color-principal: #5D4037;   /* Marrón Chocolate */
+    --color-fondo: #E8DED6;       /* Beige Suave */
+    --color-tarjeta: #FDFBF7;     /* Blanco Crema */
+    --bg-color-alt: #fcfcfc;      /* Fondo alternativo muy claro */
+    
+    /* TEXTO */
+    --text-dark: #3E2723;         /* Café muy oscuro */
+    --text-light: #795548;        /* Café medio */
+    --text-blanco: #FFFFFF;       
+    
+    /* DETALLES DE DISEÑO */
+    --sombra: 0 5px 15px rgba(93, 64, 55, 0.15); 
+    --radio-borde: 12px;          
+    --transicion: all 0.3s ease;
+}
+
+/* =========================================
+   2. RESETEO Y BASES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 55%; /* 1rem = 10px */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem; 
+}
+
+/* FONDO ANIMADO SUTIL */
+body {
+    background: linear-gradient(-45deg, #E8DED6, #FDFBF7, #E8DED6, #D7CCC8);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: var(--text-dark);
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+section {
+    min-height: auto; 
+    padding: 8rem 9% 6rem;
+}
+
+/* ESTILOS DE TEXTO GENERALES */
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+span {
+    color: var(--color-principal);
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+/* TÍTULO DE SECCIONES */
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   3. HEADER (BARRA DE NAVEGACIÓN)
+   ========================================= */
+.header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    
+    /* CORRECCIÓN: Menos padding lateral para separar logo y menú */
+    padding: 1.5rem 4%; /* Antes 9% */
+    
+    background: var(--color-principal); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo img {
+    height: 50px; 
+    width: auto;  
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-blanco);
+    margin-left: 3rem;
+    font-weight: 500;
+    transition: var(--transicion);
+    opacity: 0.9;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: var(--color-fondo); 
+    opacity: 1;
+}
+
+/* BANDERAS DE IDIOMA */
+.flags {
+    display: flex;
+    gap: 1rem;
+    margin-left: 2.5rem;
+    padding-left: 2.5rem;
+    border-left: 1px solid rgba(255,255,255,0.3); 
+    align-items: center;
+}
+
+.lang-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-blanco); 
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.lang-text:hover {
+    color: var(--color-fondo); 
+    opacity: 1;
+}
+
+.menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-blanco);
+    display: none;
+    cursor: pointer;
+}
+
+/* =========================================
+   4. SECCIÓN INICIO (HOME)
+   ========================================= */
+.inicio {
+    min-height: 90vh; 
+    padding-top: 15rem; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.inicio-contenido h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.inicio-contenido h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+.typed-cursor {
+    color: var(--color-principal);
+    font-size: 3rem;
+}
+
+.inicio-contenido p {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+}
+
+/* ESTILOS DE TODOS LOS BOTONES (PRINCIPAL, PROYECTOS Y CONTACTO) */
+/* Unificamos todo aquí para que sean IDÉNTICOS */
+.btn, .btn-proyecto {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 3rem;
+    
+    background: var(--color-principal); /* Marrón */
+    color: var(--text-blanco);
+    
+    border-radius: 4rem; /* Redondeados (Pill) */
+    box-shadow: 0 4px 10px rgba(93, 64, 55, 0.3);
+    
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-decoration: none;
+}
+
+/* Efecto Hover */
+.btn:hover, .btn-proyecto:hover {
+    background: transparent;
+    color: var(--color-principal);
+    border: 2px solid var(--color-principal);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(93, 64, 55, 0.2);
+}
+
+/* Ajuste específico para el botón dentro de la tarjeta de proyecto */
+.btn-proyecto {
+    width: 100%;
+    margin-top: auto;
+    border-radius: 1rem; /* Un poco menos redondo para encajar en la tarjeta cuadrada (opcional) */
+    /* Si querés que sea súper redondo igual a los otros, cambiá 1rem por 4rem */
+}
+
+/* Redes Sociales */
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem; height: 4.5rem;
+    background: transparent;
+    border: 2px solid var(--color-principal);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--color-principal);
+    margin-right: 1.5rem;
+    margin-bottom: 3rem;
+    transition: var(--transicion);
+}
+
+.social-media a:hover {
+    background: var(--color-principal);
+    color: var(--text-blanco);
+    box-shadow: 0 0 1rem var(--color-principal);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   5. SECCIÓN SOBRE MÍ
+   ========================================= */
+.sobre-mi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.sobre-mi-img img {
+    width: 30vw;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra);
+    border: 4px solid var(--color-tarjeta);
+}
+
+.sobre-mi-contenido {
+    flex: 1;
+}
+
+.sobre-mi-contenido .heading {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.title_sobreMi {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+    color: var(--color-principal);
+}
+
+.texto_sobreMi {
+    font-size: 2rem; 
+    line-height: 1.8;
+    text-align: justify;
+    color: var(--text-dark);
+}
+
+/* =========================================
+   6. HABILIDADES (CORREGIDO PARA TU HTML)
+   ========================================= */
+
+/* 1. EL GRUPO COMPLETO (Título + Íconos) */
+.skill-group {
+    /* AQUÍ ESTÁ LA MAGIA: 15rem de espacio debajo de cada grupo */
+    margin-bottom: 6rem; 
+}
+
+/* Quitamos el margen del último grupo para que no quede espacio extra al final */
+.skill-group:last-child {
+    margin-bottom: 0;
+}
+
+/* 2. EL TÍTULO (Frontend, Backend...) */
+.skill-title {
+    font-size: 2.4rem;
+    color: var(--color-principal);
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    
+    /* Espacio entre el título y sus íconos */
+    margin-bottom: 4rem; 
+    
+    position: relative;
+}
+
+/* Línea decorativa debajo del título */
+.skill-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--text-light);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+    opacity: 0.6;
+}
+
+/* 3. LA GRILLA DE ÍCONOS */
+.habilidades-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 3rem; 
+    width: 100%;
+}
+
+/* 4. LAS CAJITAS (Estilo visual) */
+.habilidad-box {
+    background: var(--color-tarjeta);
+    border-radius: 16px;
+    padding: 3rem 2rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; 
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.habilidad-box i {
+    font-size: 4.5rem; 
+    /* El color ya viene definido en tu HTML, así que esto es fallback */
+    color: var(--color-principal); 
+}
+
+.habilidad-box span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.habilidad-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+    border-bottom: 3px solid var(--color-principal);
+}
+
+/* =========================================
+   7. FORMACIÓN
+   ========================================= */
+.formacion-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.formacion-box {
+    flex: 1 1 30rem;
+    background: var(--color-tarjeta);
+    padding: 3rem 2rem;
+    border-radius: var(--radio-borde);
+    text-align: center;
+    transition: var(--transicion);
+    box-shadow: var(--sombra);
+    border-left: 5px solid var(--color-principal);
+}
+
+.formacion-box:hover {
+    transform: scale(1.02);
+}
+
+.formacion-box i {
+    font-size: 4.5rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.formacion-box h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.formacion-box p {
+    font-size: 1.6rem;
+    color: var(--text-light);
+}
+
+/* =========================================
+   8. PROYECTOS
+   ========================================= */
+.proyectos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
+    gap: 4rem;
+    padding-bottom: 2rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.proyecto-card {
+    background: var(--color-tarjeta);
+    border-radius: var(--radio-borde);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: var(--transicion);
+    border: 1px solid rgba(93, 64, 55, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: auto; 
+}
+
+.proyecto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(93, 64, 55, 0.2);
+}
+
+/* VIDEO Y SLIDER */
+.slider-container, 
+.video-container {
+    position: relative;
+    width: 100%;
+    height: auto; 
+    overflow: hidden;
+    border-bottom: 4px solid var(--color-principal);
+    background-color: transparent; 
+    line-height: 0; 
+    padding: 0;
+}
+
+/* Regla Maestra para Imágenes */
+.proyecto-card .slider-container .slide {
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+    display: none;
+    border: none;
+}
+
+.proyecto-card .slider-container .slide.active {
+    display: block;
+}
+
+/* Flechas */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 12px 15px;
+    color: var(--text-blanco);
+    background-color: var(--color-principal);
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    z-index: 100;
+    border-radius: 4px;
+}
+
+.next { right: 10px; }
+.prev { left: 10px; }
+
+.prev:hover, .next:hover {
+    opacity: 1;
+    background-color: var(--text-dark);
+}
+
+/* Contenido de la Tarjeta */
+.proyecto-capa {
+    position: relative;
+    background: var(--color-tarjeta);
+    padding: 2.5rem;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.proyecto-capa h4 {
+    font-size: 2.4rem;
+    color: var(--color-principal);
+    margin-bottom: 0.5rem;
+}
+
+.proyecto-subtitulo {
+    font-size: 1.4rem;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.proyecto-capa p {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+.proyecto-tech {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   9. CONTACTO (ESTILO PROFESIONAL)
+   ========================================= */
+.container--contacto {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.contacto-profesional {
+    background: var(--color-tarjeta);
+    padding: 4rem 3rem;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra);
+    border-left: 5px solid var(--color-principal);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contacto-texto {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.contacto-acciones {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Los botones heredan el estilo .btn definido arriba */
+.contacto-acciones .btn {
+    min-width: 200px;
+}
+
+/* =========================================
+   10. FOOTER
+   ========================================= */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 3rem 9%;
+    background: var(--text-dark);
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.footer-text p {
+    font-size: 1.5rem;
+    color: var(--color-fondo);
+    margin: 0;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: var(--color-principal);
+    border-radius: 50%; 
+    color: var(--text-blanco);
+    transition: var(--transicion);
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--color-principal);
+    transform: translateY(-5px);
+}
+
+/* =========================================
+   11. RESPONSIVE (MEDIA QUERIES)
+   ========================================= */
+@media (max-width: 1200px) {
+    html { font-size: 55%; }
+}
+
+@media (max-width: 991px) {
+    .header { padding: 2rem 3%; }
+    section { padding: 8rem 3% 6rem; }
+    .footer { padding: 2rem 3%; }
+}
+
+@media (max-width: 768px) {
+    .menu-icon { display: block; }
+    
+    .navbar {
+        position: absolute;
+        top: 100%; left: 0; width: 100%;
+        padding: 1rem 3%;
+        background: var(--color-principal);
+        border-top: 1px solid rgba(255,255,255,0.1);
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .navbar.active { display: flex; }
+    
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 2rem 0;
+        margin-left: 0; 
+        color: var(--text-blanco);
+    }
+    
+    .flags {
+        justify-content: center;
+        margin: 2rem 0;
+        padding: 0;
+        border: none;
+    }
+    
+    .inicio {
+        flex-direction: column-reverse;
+        padding-top: 12rem;
+    }
+    
+    .sobre-mi { flex-direction: column; }
+    .sobre-mi-img img { width: 80vw; margin-bottom: 3rem; }
+    .heading { font-size: 3rem; }
+    
+    .contacto-acciones {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contacto-acciones .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    html { font-size: 50%; }
+    .inicio-contenido h1 { font-size: 4rem; }
+}
+
+/* =========================================
+   ARREGLO DE COLOR DE TEXTO EN BOTONES
+   ========================================= */
+.btn span, 
+.btn-proyecto span {
+    /* Esto fuerza al texto a usar el color del botón (Blanco) y no marrón */
+    color: inherit !important; 
+}

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Victoria De Trocchi | Desarrolladora Web Full Stack Junior</title>
+    
+    <script src="https://kit.fontawesome.com/ae0fd6f99f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <style>
+        .emoji-flag { font-size: 2.5rem; cursor: pointer; transition: 0.3s; }
+        .emoji-flag:hover { transform: scale(1.2); }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+
+    </a>
+        <nav class="navbar">
+            <a href="#inicio" data-section="menu" data-value="item1">Inicio</a>
+            <a href="#sobre-mi" data-section="menu" data-value="item2">Sobre mí</a>
+            <a href="#habilidades" data-section="menu" data-value="item3">Habilidades</a>
+            <a href="#formacion" data-section="menu" data-value="item4">Formación</a>
+            <a href="#proyectos" data-section="menu" data-value="item5">Proyectos</a>
+            <a href="#contacto" class="btn-contacto" data-section="menu" data-value="item6">Contacto</a>
+            
+            <div id="flags" class="flags">
+                <div class="flags__item" data-language="es">
+                    <span class="lang-text">ES</span>
+                </div>
+                <div class="flags__item" data-language="en">
+                    <span class="lang-text">EN</span>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <section class="inicio" id="inicio">
+
+        <div class="inicio-contenido" data-aos="fade-left">
+            <h3 data-section="home" data-value="home_text-1">Hola, soy</h3>
+            <h1 class="home_text-2">M. Victoria De Trocchi</h1>
+            
+            <h3 class="home_text-3" data-section="home" data-value="home_text-3">
+                Desarrolladora Web Full Stack
+            </h3>
+            
+            <p data-section="home" data-value="parrafo-info">
+            Creo aplicaciones web escalables y responsivas, integrando frontend, lógica de backend y bases de datos, con foco en arquitectura limpia y experiencia de usuario.
+            </p>
+
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/victoria-de-trocchi/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/victoriadetrocchi" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:mvictoriadetrocchi@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            
+            <a href="./assets/CV.DeTrocchi.pdf" download class="btn" data-section="home" data-value="cv_button">Descargar CV</a>
+        </div>
+    </section>
+
+    <section class="sobre-mi" id="sobre-mi">
+                <div class="sobre-mi-img" data-aos="fade-left" style="display: flex; justify-content: center;">
+            <img src="./assets/images/2.png" alt="Logo Sobre Mi" class="logo-hero"> 
+        </div>
+        <div class="sobre-mi-contenido" data-aos="fade-right">
+            <h2 class="heading" data-section="sobre-mi" data-value="title">Sobre <span>Mí</span></h2>
+            
+            <p class="texto_sobreMi" data-section="sobre-mi" data-value="texto_sobreMi">
+            Mi principal enfoque está en el desarrollo Front-End, donde diseño e implemento interfaces claras, funcionales y visualmente consistentes.<br><br>
+            Abordo el desarrollo priorizando la calidad del código y la organización. Me interesa trabajar en proyectos bien estructurados donde el diseño y la ingeniería se complementen.
+            </p>
+        </div>
+    </section>
+
+<section class="habilidades" id="habilidades">
+    <h2 class="heading" data-section="habilidades" data-value="title">
+        Mis <span>Habilidades</span>
+    </h2>
+
+    <!-- Frontend -->
+    <div class="skill-group">
+        <h3 class="skill-title">Frontend</h3>
+        <div class="habilidades-container">
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fab fa-html5" style="color:#E34F26;"></i>
+                <span>HTML5</span>
+            </div>
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fab fa-css3-alt" style="color:#1572B6;"></i>
+                <span>CSS3</span>
+            </div>
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fab fa-js" style="color:#F7DF1E;"></i>
+                <span>JavaScript</span>
+            </div>
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fab fa-bootstrap" style="color:#7952B3;"></i>
+                <span>Bootstrap</span>
+            </div>
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fab fa-angular" style="color:#DD0031;"></i>
+                <span>Angular</span>
+            </div>
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fas fa-chart-pie" style="color:#FF6384;"></i>
+                <span>Chart.js</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Backend -->
+    <div class="skill-group">
+        <h3 class="skill-title">Backend</h3>
+        <div class="habilidades-container">
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fab fa-node-js" style="color:#68A063;"></i>
+                <span>Node.js</span>
+            </div>
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fas fa-server"></i>
+                <span>Express</span>
+            </div>
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fas fa-database" style="color:#00758F;"></i>
+                <span>MySQL</span>
+            </div>
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fas fa-bolt"></i>
+                <span>Socket.io</span>
+            </div>
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fas fa-key"></i>
+                <span>JWT</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="skill-group">
+        <h3 class="skill-title">Tools & Workflow</h3>
+        <div class="habilidades-container">
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fab fa-github"></i>
+                <span>Git / GitHub</span>
+            </div>
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fas fa-code" style="color:#007ACC;"></i>
+                <span>VS Code</span>
+            </div>
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fab fa-figma" style="color:#F24E1E;"></i>
+                <span>Figma</span>
+            </div>
+
+            <div class="habilidad-box" data-aos="fade-up">
+                <i class="fab fa-jira" style="color:#0052CC;"></i>
+                <span>Jira</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <section class="formacion" id="formacion">
+        <h2 class="heading" data-section="formacion" data-value="title">Mi <span>Formación</span></h2>
+        
+        <div class="formacion-container">
+            <div class="formacion-box" data-aos="fade-up">
+                <i class="fas fa-graduation-cap"></i>
+                <h3 data-section="formacion" data-value="formacion1">Tecnicatura en Desarrollo de Software</h3>
+                <p data-section="formacion" data-value="tiempo-formacion1">IES Santa Fe | 2023 - 2025</p>
+            </div>
+            <div class="formacion-box" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-language"></i>
+                <h3 data-section="formacion" data-value="formacion3">Inglés</h3>
+                <p data-section="formacion" data-value="tiempo-formacion3">Nivel B2 / C1</p>
+            </div>
+        </div>
+    </section>
+
+<section class="proyectos" id="proyectos">
+    <h2 class="heading" data-section="proyectos" data-value="title">MIS <span>PROYECTOS</span></h2>
+    
+    <div class="proyecto-card desktop-mode" data-aos="fade-up">
+    <div class="device-stage">
+        <div class="monitor-frame">
+            <div class="monitor-screen">
+                <div class="slider-container">
+                    
+                    <img src="./assets/images/buffet.png" class="slide fade mySlides1" style="display:block">
+                    <img src="./assets/images/buffet.png" class="slide fade mySlides1">
+                    <img src="./assets/images/buffet2.png" class="slide fade mySlides1">
+                    <img src="./assets/images/buffet3.png" class="slide fade mySlides1">
+                    <img src="./assets/images/buffet4.png" class="slide fade mySlides1">
+                    <img src="./assets/images/buffet5.png" class="slide fade mySlides1">
+                    <img src="./assets/images/buffet6.png" class="slide fade mySlides1">
+                    <img src="./assets/images/buffet7.png" class="slide fade mySlides1">
+
+                    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                </div>
+            </div>
+        </div>
+        <div class="monitor-stand"></div>
+    </div>
+
+    <div class="proyecto-capa">
+        <h4>Buffet</h4>
+        <h5 class="proyecto-subtitulo">Sistema de Gestión de Almuerzos</h5>
+        <p>Plataforma web Full Stack para la gestión de comedores corporativos. Desarrollada con <strong>Angular</strong> en el frontend y Node.js en el backend. Incorpora actualizaciones en tiempo real con <strong>Socket.io</strong> para el control de stock y pedidos, además de autenticación segura (JWT) y roles de usuario.</p>
+        <div class="proyecto-tech">
+        <span>Angular</span> · <span>TypeScript</span> · <span>Node.js</span> · <span>Express</span> · <span>MySQL</span>
+    </div>
+    <div class="proyecto-links">
+            <a href="https://github.com/victoriadetrocchi/Buffet-app" target="_blank" class="btn-proyecto">
+            <i class="fab fa-github"></i> Código</a>
+        </div>
+    </div>
+</div>
+
+<div class="proyecto-card mobile-mode" data-aos="fade-up">
+    <div class="device-stage">
+        <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+                <div class="slider-container mobile-slider">
+                    
+                    <img src="./assets/images/zumma1.png" class="slide fade mySlides2" style="display:block">
+                    <img src="./assets/images/zumma2.png" class="slide fade mySlides2">
+                    <img src="./assets/images/zumma3.png" class="slide fade mySlides2">
+                    <img src="./assets/images/zumma4.png" class="slide fade mySlides2">
+                    <img src="./assets/images/zumma5.png" class="slide fade mySlides2">
+                    <img src="./assets/images/zumma6.png" class="slide fade mySlides2">
+                    <img src="./assets/images/zumma7.png" class="slide fade mySlides2">
+                    <img src="./assets/images/zumma8.png" class="slide fade mySlides2">
+                    <img src="./assets/images/zumma9.png" class="slide fade mySlides2">
+                    <img src="./assets/images/zumma10.png" class="slide fade mySlides2">
+                    <img src="./assets/images/zumma11.png" class="slide fade mySlides2">
+                    <img src="./assets/images/zumma12.png" class="slide fade mySlides2">
+                    <img src="./assets/images/zumma13.png" class="slide fade mySlides2">
+
+                    <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="proyecto-capa">
+        <h4>Zummax</h4>
+        <h5 class="proyecto-subtitulo">Control de Finanzas Personales</h5>
+        <p>Aplicación integral para la administración de economía personal. Permite el registro de movimientos, creación de presupuestos y visualización de datos con gráficos interactivos (<strong>Chart.js</strong>). Incluye funciones de exportación a Excel y reportes detallados.</p>
+        <div class="proyecto-tech">
+        <span>HTML</span> · <span>CSS</span> · <span>JavaScript</span> · <span>Node.js</span> · <span>Express</span> · <span>MySQL</span>
+        </div>
+        <div class="proyecto-links">
+            <a href="https://github.com/victoriadetrocchi/ZummaX" target="_blank" class="btn-proyecto">
+        <i class="fab fa-github"></i> Código</a>
+        </div>
+    </div>
+</div>
+</section>
+
+<section id="contacto" class="seccion-oscura">
+    <div class="contenedor-contacto">
+        
+        <h2 class="titulo-seccion">CONTACTO</h2>
+        <p class="subtitulo-contacto">Seleccioná tu canal preferido para hablar:</p>
+
+        <div class="contact-grid">
+            
+            <a href="mailto:mvictoriadetrocchi@gmail.com" class="contact-card email-card">
+                <div class="icon-circle">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>E-mail</h3>
+                <p>mvictoriadetrocchi@gmail.com</p>
+                <span class="cta-text">Enviar correo <i class="fas fa-arrow-right"></i></span>
+            </a>
+
+            <a href="https://wa.me/5493437497509" target="_blank" class="contact-card whatsapp-card">
+                <div class="icon-circle">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3>WhatsApp</h3>
+                <p>Chat directo</p>
+                <span class="cta-text">Iniciar chat <i class="fas fa-arrow-right"></i></span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2026 María Victoria De Trocchi | Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#inicio"><i class="fas fa-angle-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    <script src="./script.js"></script>
+</body>
+</html>

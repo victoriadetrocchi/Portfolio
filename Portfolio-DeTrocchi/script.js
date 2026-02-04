@@ -33,7 +33,7 @@ const translations = {
         'proyectos': {
             'title': 'Mis <span>Proyectos</span>',
             'btn-codigo': 'Ver Código',
-            'title-proyecto1': 'Buffet',
+            'title-proyecto1': 'BuffetI2T',
             'subt-proyecto1': 'Sistema de Gestión de Almuerzos',
             'info-proyecto1': 'Plataforma web Full Stack para la gestión de comedores corporativos. Desarrollada con <strong>Angular</strong> en el frontend y Node.js en el backend. Incorpora actualizaciones en tiempo real con <strong>Socket.io</strong> para el control de stock y pedidos, además de autenticación segura (JWT) y roles de usuario.',
             'title-proyecto2': 'ZummaX',
@@ -58,7 +58,7 @@ const translations = {
         },
         'home': { 
             'home_text-1': 'Hi, I\'m', 
-            'home_text-3': 'Full Stack Junior Web Developer', 
+            'home_text-3': 'Full Stack Web Developer', 
             'parrafo-info': 'I build scalable and responsive web applications, integrating frontend, backend logic, and databases, focusing on clear architecture, usability, and code maintainability.',
             'cv_button': 'Download CV'
         },
@@ -69,7 +69,7 @@ const translations = {
         'habilidades': { 'title': 'My <span>Skills</span>' },
         'formacion': {
             'title': 'My <span>Education</span>',
-            'formacion1': 'Software Development Technician',
+            'formacion1': 'Associate Degree in Software Development',
             'tiempo-formacion1': 'IES Santa Fe | 2023 - 2025',
             'formacion2': 'Full Stack Web Development',
             'tiempo-formacion2': 'Professional Practices & Courses',
@@ -79,7 +79,7 @@ const translations = {
         'proyectos': {
             'title': 'My <span>Projects</span>',
             'btn-codigo': 'View Code',
-            'title-proyecto1': 'Buffet12T',
+            'title-proyecto1': 'BuffetI2T',
             'subt-proyecto1': 'Lunch Management System',
             'info-proyecto1': 'Full Stack web platform for corporate cafeteria management. Developed with <strong>Angular</strong> on the frontend and Node.js on the backend. Features real-time updates with <strong>Socket.io</strong> for stock and order control, plus secure authentication (JWT) and user roles.',
             'title-proyecto2': 'ZummaX',

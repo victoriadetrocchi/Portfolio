@@ -139,9 +139,9 @@ p {
     
     /* Estilo de botón redondeado y "en el aire" */
     padding: 0.8rem 2rem;
-    background: var(--bg-card); /* Azul oscuro #242834 */
-    border: 1px solid var(--color-accent); /* Borde Púrpura */
-    border-radius: 50px; /* Redondeado completo */
+    background: var(--bg-card);
+    border: 1px solid var(--color-accent); 
+    border-radius: 50px; 
 }
 
 .navbar a:hover, .navbar a.active {
@@ -179,7 +179,6 @@ p {
     transition: var(--transicion);
 }
 
-/* Efecto Hover (Cuando pasas el mouse en la compu) */
 .flags__item:hover {
     background: rgba(182, 255, 0, 0.1); /* Fondo verde sutil */
     transform: translateY(-2px); /* Flota un poquito */
@@ -215,35 +214,58 @@ p {
         justify-content: space-between;
     }
 
+    /* Contenedor flotante compacto a la IZQUIERDA */
     .navbar {
         position: absolute;
-        top: 100%; left: 0; width: 100%;
-        background: #0f111a;
-        border-top: 1px solid var(--color-titulos);
+        top: 100%; 
+        left: 5% !important; /* ¡CLAVE! Alineado a la izquierda */
+        right: auto !important; /* ¡CLAVE! Desengancha el lado derecho */
+        width: auto !important; 
+        min-width: 220px; 
+        background: rgba(36, 40, 52, 0.95);
+        backdrop-filter: blur(15px);
+        border: 1px solid var(--color-accent);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(125, 83, 255, 0.2);
         display: none; 
         flex-direction: column;
+        align-items: center; 
         padding: 2rem;
-        text-align: center;
-        border-radius: 0; /* En móvil mantenemos el menú desplegable estándar */
+        gap: 1.2rem; 
     }
     
     .navbar.active { display: flex; }
     
-    .navbar a { display: block; margin: 1rem 0; font-size: 2rem; }
+    .navbar a { 
+        display: block; 
+        margin: 0; 
+        font-size: 1.5rem; 
+        padding: 0.8rem 2rem;
+        width: 100%;
+        text-align: center;
+    }
     
-    /* Hacemos que las banderas aparezcan centradas al final del menú desplegable */
+    /* Banderas */
     .flags { 
         display: flex; 
         justify-content: center;
-        margin: 2rem auto 0 auto;
-        border-left: none; /* Quitamos la línea separadora de escritorio */
-        padding-left: 0;
+        margin: 0.5rem auto 0 auto;
+        padding: 0.3rem;
+        width: fit-content;
+        border-left: none; 
     }
     
-    .menu-icon { display: block; }
+    /* Mueve el ícono de las 3 rayitas a la izquierda */
+    .menu-icon { 
+        display: block; 
+        order: -1; /* Lo manda al extremo izquierdo */
+        margin-left: 0; /* Anula cualquier margen anterior */
+    }
 }
 
-/* 6. COMPONENTES TECH (Botones Redondeados) */
+/* =========================================
+    6. COMPONENTES TECH (Botones Redondeados)
+   ========================================= */
 
 .btn, .btn-proyecto {
     display: inline-flex;

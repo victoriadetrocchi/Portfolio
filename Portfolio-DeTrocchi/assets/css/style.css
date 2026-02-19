@@ -155,20 +155,49 @@ p {
 .flags {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem; 
     margin-left: 2rem;
-    padding: 0.8rem 1.5rem;
+    padding: 0.5rem; 
     background: var(--bg-card);
     border: 1px solid var(--color-accent);
-    border-radius: 50px; /* Redondeado para las banderas */
+    border-radius: 50px; 
     white-space: nowrap;
+}
+
+.flags__item {
+    cursor: pointer;
+    transition: var(--transicion);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    background: transparent;
 }
 
 .lang-text {
     font-size: 1.4rem;
     color: var(--color-texto);
-    cursor: pointer;
     font-weight: 600;
+    transition: var(--transicion);
+}
+
+/* Efecto Hover (Cuando pasas el mouse en la compu) */
+.flags__item:hover {
+    background: rgba(182, 255, 0, 0.1); /* Fondo verde sutil */
+    transform: translateY(-2px); /* Flota un poquito */
+}
+
+.flags__item:hover .lang-text {
+    color: var(--color-titulos); /* Texto Verde Neón */
+    text-shadow: 0 0 10px rgba(182, 255, 0, 0.6);
+}
+
+.flags__item:active {
+    transform: scale(0.9); 
+    background: var(--color-titulos); 
+}
+
+.flags__item:active .lang-text {
+    color: #1a1a1a; /* Texto oscuro para contrastar con el fondo verde */
+    text-shadow: none;
 }
 
 /* MENÚ HAMBURGUESA (MÓVIL) */
@@ -202,7 +231,14 @@ p {
     
     .navbar a { display: block; margin: 1rem 0; font-size: 2rem; }
     
-    .flags { display: none; }
+    /* Hacemos que las banderas aparezcan centradas al final del menú desplegable */
+    .flags { 
+        display: flex; 
+        justify-content: center;
+        margin: 2rem auto 0 auto;
+        border-left: none; /* Quitamos la línea separadora de escritorio */
+        padding-left: 0;
+    }
     
     .menu-icon { display: block; }
 }

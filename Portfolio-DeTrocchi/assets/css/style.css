@@ -5,18 +5,20 @@
 /* 1. IMPORTACIÓN DE FUENTES */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap');
 
-/* 2. VARIABLES Y PALETA DE COLORES */
+/* 2. VARIABLES Y NUEVA PALETA TECH */
 :root {
-    /* PALETA ROJA TECH */
-    --color-titulos: #B31D1E;       
+    /* Basado en tu imagen: Verde Neón, Púrpura y Oscuro Azulado */
+    --color-titulos: #B6FF00;       /* Verde Neón para títulos y botones */
     --color-texto: #E0DADA;         
-    --color-accent: #7B1A1B;        
+    --color-accent: #7D53FF;        /* Púrpura para subtítulos y detalles */
     
-    /* EXTRAS TECH */
-    --bg-body: #050505;             
-    --bg-card: rgba(42, 31, 31, 0.6); 
-    --color-borde: #3A2A2A;
-    --neon-glow: 0 0 15px rgba(179, 29, 30, 0.5);
+    /* Fondos y Componentes */
+    --bg-body: #0f111a;             /* Fondo profundo principal */
+    --bg-card: rgba(36, 40, 52, 0.8); /* El oscuro azulado #242834 con transparencia */
+    --color-borde: #7D53FF;         /* Bordes en Púrpura */
+    
+    /* Efectos */
+    --neon-glow: 0 0 15px rgba(182, 255, 0, 0.5);
     --transicion: all 0.3s ease;
 }
 
@@ -36,22 +38,15 @@ html {
 }
 
 /* =========================================
-   4. FONDO GENERADO POR CÓDIGO
+   4. FONDO SÓLIDO (SIN EFECTOS)
    ========================================= */
 body {
     font-family: 'Inter', sans-serif;
     color: var(--color-texto);
     overflow-x: hidden;
     
-    /* FONDO DE GRADIENTES */
-    background-color: var(--bg-body);
-    background-image: 
-        radial-gradient(circle at 50% 50%, rgba(179, 29, 30, 0.15) 0%, transparent 60%),
-        radial-gradient(circle at 0% 0%, rgba(179, 29, 30, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(179, 29, 30, 0.2) 0%, transparent 50%);
-        
-    background-attachment: fixed;
-    background-size: 100% 100%;
+    /* Eliminamos los gradientes y dejamos el azul oscuro de tu paleta */
+    background-color: #0e0f14; 
     min-height: 100vh;
 }
 
@@ -59,15 +54,23 @@ section {
     min-height: 100vh;
     padding: 10rem 9% 8rem;
     position: relative;
-    border-bottom: 1px solid rgba(58, 42, 42, 0.3);
+    /* Mantenemos una separación muy sutil en negro o púrpura oscuro */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 /* TIPOGRAFÍA */
-h1, h2, h3, h4, h5, .logo, .navbar a {
+h1, h2, h4, .logo {
     font-family: 'Space Grotesk', sans-serif;
-    color: var(--color-titulos);
+    color: var(--color-titulos); /* Verde Neón para títulos principales */
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* Subtítulos en Púrpura */
+h3, h5, .skill-title, .proyecto-subtitulo {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--color-accent); /* Púrpura */
+    text-transform: uppercase;
 }
 
 p {
@@ -76,14 +79,13 @@ p {
     font-weight: 300;
 }
 
-span { color: var(--color-titulos); }
-
 /* TÍTULOS DE SECCIÓN */
 .heading {
     text-align: center;
     font-size: 4rem;
     margin-bottom: 6rem;
     text-transform: uppercase;
+    color: var(--color-titulos);
     text-shadow: var(--neon-glow);
     display: inline-block;
     position: relative;
@@ -96,13 +98,13 @@ span { color: var(--color-titulos); }
     display: block;
     width: 60px;
     height: 3px;
-    background: var(--color-titulos);
+    background: var(--color-accent); /* Detalle de línea en Púrpura */
     margin: 1rem auto 0;
-    box-shadow: var(--neon-glow);
+    box-shadow: 0 0 10px var(--color-accent);
 }
 
 /* =========================================
-   5. HEADER Y NAVEGACIÓN
+   5. HEADER Y NAVEGACIÓN (ESTILO FLOTANTE)
    ========================================= */
 
 .header {
@@ -110,9 +112,9 @@ span { color: var(--color-titulos); }
     top: 0; left: 0; width: 100%;
     padding: 2rem 5%;
     
-    background: rgba(5, 5, 5, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-borde);
+    background: transparent; /* Eliminamos el fondo de barra sólida */
+    backdrop-filter: none; /* Quitamos el desenfoque de la barra */
+    border-bottom: none; /* Eliminamos la línea inferior de la barra */
     
     display: flex;
     justify-content: center; 
@@ -124,20 +126,29 @@ span { color: var(--color-titulos); }
 .navbar {
     display: flex;
     align-items: center;
+    gap: 1rem; /* Espaciado entre botones flotantes */
 }
 
 .navbar a {
     font-size: 1.6rem;
     color: var(--color-texto);
-    margin: 0 1.5rem;
+    margin: 0 0.5rem;
     font-weight: 500;
     transition: var(--transicion);
     white-space: nowrap;
+    
+    /* Estilo de botón redondeado y "en el aire" */
+    padding: 0.8rem 2rem;
+    background: var(--bg-card); /* Azul oscuro #242834 */
+    border: 1px solid var(--color-accent); /* Borde Púrpura */
+    border-radius: 50px; /* Redondeado completo */
 }
 
 .navbar a:hover, .navbar a.active {
-    color: var(--color-titulos);
-    text-shadow: 0 0 10px rgba(179, 29, 30, 0.6);
+    color: var(--color-titulos); /* Verde Neón */
+    border-color: var(--color-titulos);
+    text-shadow: 0 0 10px rgba(182, 255, 0, 0.6);
+    box-shadow: var(--neon-glow);
 }
 
 /* Las banderas (ES / EN) */
@@ -146,8 +157,10 @@ span { color: var(--color-titulos); }
     align-items: center;
     gap: 1rem;
     margin-left: 2rem;
-    padding-left: 2rem;
-    border-left: 1px solid var(--color-borde);
+    padding: 0.8rem 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--color-accent);
+    border-radius: 50px; /* Redondeado para las banderas */
     white-space: nowrap;
 }
 
@@ -176,24 +189,25 @@ span { color: var(--color-titulos); }
     .navbar {
         position: absolute;
         top: 100%; left: 0; width: 100%;
-        background: #050505;
+        background: #0f111a;
         border-top: 1px solid var(--color-titulos);
         display: none; 
         flex-direction: column;
         padding: 2rem;
         text-align: center;
+        border-radius: 0; /* En móvil mantenemos el menú desplegable estándar */
     }
     
     .navbar.active { display: flex; }
     
-    .navbar a { display: block; margin: 2rem 0; font-size: 2rem; }
+    .navbar a { display: block; margin: 1rem 0; font-size: 2rem; }
     
     .flags { display: none; }
     
     .menu-icon { display: block; }
 }
 
-/* 6. COMPONENTES TECH (Cards y Botones) */
+/* 6. COMPONENTES TECH (Botones Redondeados) */
 
 .btn, .btn-proyecto {
     display: inline-flex;
@@ -202,7 +216,7 @@ span { color: var(--color-titulos); }
     gap: 1.5rem;
     padding: 1.2rem 3.5rem;
     background: transparent;
-    color: var(--color-titulos);
+    color: var(--color-titulos); /* Verde Neón */
     border: 1px solid var(--color-titulos);
     
     font-family: 'Space Grotesk', sans-serif;
@@ -212,40 +226,13 @@ span { color: var(--color-titulos); }
     cursor: pointer;
     transition: var(--transicion);
     margin-top: 2rem;
+    border-radius: 50px; /* Cambio a botones redondeados */
 }
 
 .btn:hover, .btn-proyecto:hover {
     background: var(--color-titulos);
-    color: #000;
-    box-shadow: 0 0 20px rgba(179, 29, 30, 0.6);
-}
-
-.habilidad-box {
-    background: var(--bg-card);
-    border: 1px solid var(--color-borde);
-    backdrop-filter: blur(5px);
-    padding: 3rem 2rem;
-    text-align: center;
-    border-radius: 0;
-    transition: var(--transicion);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.habilidad-box i {
-    font-size: 5rem;
-    color: var(--color-titulos);
-    margin: 0;
-}
-
-.habilidad-box span {
-    font-size: 1.8rem;
-    color: var(--color-texto);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
+    color: #1a1a1a;
+    box-shadow: 0 0 20px rgba(182, 255, 0, 0.6);
 }
 
 /* 7. ESTILOS POR SECCIÓN */
@@ -264,6 +251,7 @@ span { color: var(--color-titulos); }
     padding-top: 9rem !important; 
     padding-bottom: 5rem;
     text-align: center !important;
+    background-color: #0e0f14; /* Fondo azul oscuro sólido */
 }
 
 .inicio-contenido {
@@ -275,13 +263,7 @@ span { color: var(--color-titulos); }
     align-items: center !important;
 }
 
-.inicio-contenido h3,
-.inicio-contenido h1,
-.inicio-contenido p {
-    text-align: center !important;
-    width: 100%;
-}
-
+/* "Hola, soy" */
 .inicio-contenido h3:first-child {
     font-size: 2rem;
     color: var(--color-texto);
@@ -290,18 +272,20 @@ span { color: var(--color-titulos); }
     text-transform: uppercase;
 }
 
+/* Nombre Principal en Verde Neón */
 .inicio-contenido h1 {
     font-size: 6rem;
     line-height: 1.1;
     margin: 1rem 0 2rem 0;
     text-transform: uppercase;
-    color: var(--color-titulos);
+    color: var(--color-titulos); /* Verde Neón */
     text-shadow: var(--neon-glow);
 }
 
+/* Rol / Subtítulo en Púrpura */
 .inicio-contenido h3:nth-of-type(2) {
     font-size: 2.5rem;
-    color: var(--color-titulos);
+    color: var(--color-accent); /* Púrpura */
     margin-bottom: 2rem;
     font-weight: 700;
 }
@@ -310,10 +294,12 @@ span { color: var(--color-titulos); }
     font-size: 1.8rem;
     line-height: 1.6;
     max-width: 700px;
-    margin-bottom: 3rem;
+    margin: 0 auto 3rem auto; /* El 'auto' a los lados centra el bloque */
     color: var(--color-texto);
+    text-align: center; /* Centra el texto por dentro */
 }
 
+/* Redes Sociales con acento Verde Neón */
 .social-media {
     display: flex !important;
     justify-content: center !important;
@@ -329,7 +315,7 @@ span { color: var(--color-titulos); }
     align-items: center;
     width: 5.5rem; 
     height: 5.5rem;
-    border: 1px solid var(--color-titulos);
+    border: 1px solid var(--color-titulos); /* Borde Verde Neón */
     border-radius: 50%;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -337,20 +323,43 @@ span { color: var(--color-titulos); }
 
 .social-media a i {
     font-size: 2.4rem;
-    color: var(--color-titulos) !important; 
+    color: var(--color-titulos) !important; /* Icono Verde Neón */
 }
 
 .social-media a:hover {
     background: var(--color-titulos);
-    box-shadow: var(--neon-glow);
+    box-shadow: var(--neon-glow); /* Brillo Verde Neón */
     transform: translateY(-5px);
 }
+
 .social-media a:hover i {
-    color: #000 !important;
+    color: #1a1a1a !important; /* Color oscuro para contraste sobre el verde */
 }
 
-.inicio-contenido .btn {
-    margin-top: 0rem;
+/* =========================================
+   SOBRE MÍ
+   ========================================= */
+
+.sobre-mi {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    background-color: #181b23;
+}
+
+.sobre-mi-contenido {
+    padding: 3rem;
+    border: none;
+}
+
+/* Imagen con brillo Púrpura */
+.sobre-mi-img img {
+    width: 30vw;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    filter: drop-shadow(0 0 15px rgba(182, 255, 0, 0.6)); 
+    animation: float 4s ease-in-out infinite;
 }
 
 @media (max-width: 768px) {
@@ -363,27 +372,6 @@ span { color: var(--color-titulos); }
     #inicio {
         padding-top: 12rem !important;
     }
-}
-
-/* SOBRE MÍ */
-.sobre-mi {
-    display: flex;
-    align-items: center;
-    gap: 5rem;
-}
-
-.sobre-mi-contenido {
-    padding: 3rem;
-    border: none;
-}
-
-.sobre-mi-img img {
-    width: 30vw;
-    border: none;
-    background: transparent;
-    box-shadow: none;
-    filter: drop-shadow(0 0 20px rgba(179, 29, 30, 0.4));
-    animation: float 4s ease-in-out infinite;
 }
 
 /* =========================================
@@ -400,8 +388,8 @@ span { color: var(--color-titulos); }
 }
 
 .habilidad-box {
-    background: #000;
-    border: 1px solid var(--color-titulos);
+    background: var(--bg-card); /* Azul oscuro de tu paleta */
+    border: 1px solid var(--color-accent); /* Borde Púrpura inicial */
     aspect-ratio: 1 / 1; 
     width: 100%; 
     padding: 1rem;
@@ -417,7 +405,7 @@ span { color: var(--color-titulos); }
 
 .habilidad-box i {
     font-size: 3.5rem;
-    color: var(--color-titulos);
+    color: var(--color-titulos); /* Iconos en Verde Neón */
 }
 
 .habilidad-box span {
@@ -428,10 +416,10 @@ span { color: var(--color-titulos); }
 }
 
 .habilidad-box:hover {
-    border-color: var(--color-titulos);
-    box-shadow: 0 0 15px rgba(179, 29, 30, 0.8);
+    border-color: var(--color-titulos); /* Cambio a Verde Neón al pasar el mouse */
+    box-shadow: var(--neon-glow);
     transform: translateY(-5px);
-    background: #1a0505;
+    background: #1a1e2a; /* Tono ligeramente distinto para el hover */
 }
 
 .habilidad-box:hover i {
@@ -443,7 +431,7 @@ span { color: var(--color-titulos); }
     text-align: center;
     display: block;
     margin-bottom: 2.5rem;
-    color: var(--color-texto);
+    color: var(--color-accent); 
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -459,7 +447,7 @@ span { color: var(--color-titulos); }
 .formacion {
     padding: 8rem 0;
     position: relative;
-    background: transparent; 
+    background: #181b23; /* Fondo azul oscuro sólido */
 }
 
 .formacion-container {
@@ -472,16 +460,16 @@ span { color: var(--color-titulos); }
     position: relative;
 }
 
-/* EFECTO DE CONEXIÓN */
+/* EFECTO DE CONEXIÓN EN PÚRPURA */
 .formacion-container::before {
     content: "";
     position: absolute;
     top: 50%; left: 50%;
     width: 200px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--color-titulos), transparent);
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px var(--color-titulos);
+    box-shadow: 0 0 20px var(--color-accent);
     z-index: 0;
 }
 
@@ -490,10 +478,10 @@ span { color: var(--color-titulos); }
     position: absolute;
     top: 50%; left: 50%;
     width: 10px; height: 10px;
-    background: #eb0e0e;
+    background: var(--color-accent);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px var(--color-titulos), 0 0 40px var(--color-titulos);
+    box-shadow: 0 0 20px var(--color-accent), 0 0 40px var(--color-accent);
     animation: pulse 2s infinite;
     z-index: 1;
 }
@@ -501,8 +489,8 @@ span { color: var(--color-titulos); }
 .formacion-box {
     flex: 1 1 350px;
     max-width: 450px;
-    background: rgba(58, 42, 42, 0.3);
-    border: 1px solid #3A2A2A;
+    background: #0e0f14; /* Azul oscuro translúcido */
+    border: 1px solid var(--color-accent); /* Bordes Púrpura */
     backdrop-filter: blur(10px);
     padding: 4rem 3rem;
     text-align: center;
@@ -515,15 +503,15 @@ span { color: var(--color-titulos); }
 
 .formacion-box:hover {
     transform: translateY(-10px);
-    border-color: var(--color-titulos);
-    box-shadow: 0 0 40px rgba(179, 29, 30, 0.3);
+    border-color: var(--color-titulos); /* Resalta en Verde al pasar el mouse */
+    box-shadow: 0 0 40px rgba(182, 255, 0, 0.2);
 }
 
 .formacion-box i {
     font-size: 5rem;
-    color: var(--color-titulos);
+    color: var(--color-titulos); /* Iconos en Verde Neón */
     margin-bottom: 2rem;
-    text-shadow: 0 0 20px rgba(179, 29, 30, 0.6);
+    text-shadow: 0 0 20px rgba(182, 255, 0, 0.4);
     display: inline-block;
     transition: 0.3s;
 }
@@ -547,10 +535,11 @@ span { color: var(--color-titulos); }
     font-weight: 300;
 }
 
+/* Animación de pulso actualizada al Púrpura */
 @keyframes pulse {
-    0% { box-shadow: 0 0 10px var(--color-titulos); opacity: 0.8; }
-    50% { box-shadow: 0 0 30px var(--color-titulos); opacity: 1; }
-    100% { box-shadow: 0 0 10px var(--color-titulos); opacity: 0.8; }
+    0% { box-shadow: 0 0 10px var(--color-accent); opacity: 0.8; }
+    50% { box-shadow: 0 0 30px var(--color-accent); opacity: 1; }
+    100% { box-shadow: 0 0 10px var(--color-accent); opacity: 0.8; }
 }
 
 @media (max-width: 900px) {
@@ -604,7 +593,7 @@ span { color: var(--color-titulos); }
     border: 3px solid #333;
     border-radius: 8px;
     padding: 0;
-    box-shadow: 0 0 25px rgba(179, 29, 30, 0.4);
+    box-shadow: 0 0 25px rgba(182, 255, 0, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -655,7 +644,7 @@ span { color: var(--color-titulos); }
     border: 3px solid #2a2a2a;
     border-radius: 30px;
     padding: 9px;
-    box-shadow: 0 0 20px rgba(179, 29, 30, 0.5);
+    box-shadow: 0 0 20px rgba(125, 83, 255, 0.4);
     position: relative;
     margin: 0 auto;
 }
@@ -670,7 +659,6 @@ span { color: var(--color-titulos); }
     border: 1px solid #111;
 }
 
-/* FLECHAS REDONDAS UNIFICADAS */
 .monitor-screen .prev, .monitor-screen .next,
 .phone-screen .prev, .phone-screen .next {
     position: absolute;
@@ -698,9 +686,9 @@ span { color: var(--color-titulos); }
 .monitor-screen .prev:hover, .monitor-screen .next:hover,
 .phone-screen .prev:hover, .phone-screen .next:hover {
     background-color: var(--color-titulos);
-    color: #000 !important;
+    color: #1a1a1a !important;
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 0 10px rgba(179, 29, 30, 0.6);
+    box-shadow: 0 0 10px rgba(182, 255, 0, 0.6);
 }
 
 .phone-screen .prev { left: 5px; }
@@ -708,7 +696,7 @@ span { color: var(--color-titulos); }
 
 .phone-screen .prev:hover, .phone-screen .next:hover {
     background-color: var(--color-titulos);
-    color: #000 !important;
+    color: #1a1a1a !important;
 }
 
 .phone-notch {
@@ -723,8 +711,8 @@ span { color: var(--color-titulos); }
 
 .proyecto-capa { padding: 1rem 0; text-align: left; }
 .proyecto-capa h4 { color: var(--color-titulos); font-size: 2.5rem; margin-bottom: 0.5rem; }
-.proyecto-subtitulo { color: #fff; font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 300; }
-.proyecto-tech { border-top: 1px solid #333; padding-top: 1.5rem; margin-top: auto; color: var(--color-accent); font-family: 'Space Grotesk', monospace; font-size: 1.3rem; }
+.proyecto-subtitulo { color: var(--color-accent); font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 300; }
+.proyecto-tech { border-top: 1px solid var(--color-accent); padding-top: 1.5rem; margin-top: auto; color: var(--color-accent); font-family: 'Space Grotesk', monospace; font-size: 1.3rem; }
 .proyecto-links { margin-top: 2rem; display: flex; gap: 1rem; }
 
 @media (max-width: 768px) {
@@ -801,14 +789,13 @@ span { color: var(--color-titulos); }
         justify-content: center !important;
     }
 }
-
 /* =========================================
    CONTACTO
    ========================================= */
 
 #contacto {
     padding: 8rem 2rem;
-    background-color: #050505;
+    background-color: #181b23; /* Fondo azul oscuro sólido */
     min-height: 70vh;
     display: flex;
     flex-direction: column;
@@ -840,8 +827,8 @@ span { color: var(--color-titulos); }
 }
 
 .contact-card {
-    background: rgba(58, 42, 42, 0.3); 
-    border: 1px solid #3A2A2A;
+    background: #0e0f14; /* Tono más oscuro para contraste */
+    border: 1px solid var(--color-accent); /* Borde Púrpura */
     padding: 4rem 2rem;
     border-radius: 10px;
     text-decoration: none;
@@ -852,8 +839,8 @@ span { color: var(--color-titulos); }
     justify-content: center;
     position: relative;
     overflow: hidden;
-    border-color: rgba(179, 29, 30, 0.5);
-    box-shadow: 0 0 15px rgba(179, 29, 30, 0.2);
+    border-color: rgba(125, 83, 255, 0.5); /* Púrpura translúcido */
+    box-shadow: 0 0 15px rgba(125, 83, 255, 0.1);
 }
 
 .contact-card h3 {
@@ -872,7 +859,7 @@ span { color: var(--color-titulos); }
 
 .cta-text {
     font-size: 1.4rem;
-    color: var(--color-titulos);
+    color: var(--color-titulos); /* Verde Neón */
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -887,7 +874,7 @@ span { color: var(--color-titulos); }
     height: 80px;
     border-radius: 50%;
     background: rgba(0,0,0,0.5);
-    border: 1px solid #3A2A2A;
+    border: 1px solid var(--color-accent); /* Borde Púrpura */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -904,25 +891,25 @@ span { color: var(--color-titulos); }
 }
 
 .email-card:hover {
-    background: rgba(179, 29, 30, 0.2); 
+    background: rgba(182, 255, 0, 0.05);
     border-color: var(--color-titulos);
-    box-shadow: 0 0 30px rgba(179, 29, 30, 0.3);
+    box-shadow: 0 0 30px rgba(182, 255, 0, 0.2);
 }
 .email-card:hover .icon-circle {
     background: var(--color-titulos);
-    color: #000;
-    box-shadow: 0 0 20px rgba(179, 29, 30, 0.8);
+    border-color: var(--color-titulos);
+    box-shadow: 0 0 20px rgba(182, 255, 0, 0.6);
 }
 
 .whatsapp-card:hover {
-    background: rgba(37, 211, 102, 0.1);
-    border-color: #25D366;
-    box-shadow: 0 0 30px rgba(37, 211, 102, 0.2);
+    background: rgba(182, 255, 0, 0.05);
+    border-color: var(--color-titulos);
+    box-shadow: 0 0 30px rgba(182, 255, 0, 0.2);
 }
 .whatsapp-card:hover .icon-circle {
-    background: #25D366;
-    border-color: #25D366;
-    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+    background: var(--color-titulos);
+    border-color: var(--color-titulos);
+    box-shadow: 0 0 20px rgba(182, 255, 0, 0.6);
 }
 
 .contact-card:hover .cta-text {
@@ -943,21 +930,37 @@ span { color: var(--color-titulos); }
     text-align: center !important;
     margin: 0 auto 2rem auto !important;
     font-size: 4rem; 
-    color: var(--color-titulos);
+    color: var(--color-titulos); /* Verde Neón */
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 
-        0 0 20px var(--color-titulos),
-        0 0 40px rgba(179, 29, 30, 0.5);
+        0 0 20px rgba(182, 255, 0, 0.5),
+        0 0 40px rgba(182, 255, 0, 0.3);
 }
 
 /* FOOTER */
 .footer {
-    background: #000; padding: 3rem; text-align: center; border-top: 1px solid var(--color-borde);
+    background: #0a0c12; /* Azul muy oscuro para el footer */
+    padding: 3rem; 
+    text-align: center; 
+    border-top: 1px solid var(--color-accent);
 }
+
 .footer-iconTop a {
-    padding: 1rem 1.3rem; background: var(--color-accent); color: #fff;
-    display: inline-block; margin-top: 1.5rem;
+    padding: 1rem 1.3rem; 
+    background: var(--color-accent); /* Fondo Púrpura */
+    color: #fff;
+    display: inline-block; 
+    margin-top: 1.5rem;
+    border-radius: 50px; /* Bordes redondeados como la navbar */
+    transition: var(--transicion); /* Transición suave */
+}
+
+.footer-iconTop a:hover {
+    background: var(--color-titulos); /* Cambia a Verde Neón */
+    color: #1a1a1a; /* Icono en oscuro para hacer contraste */
+    box-shadow: 0 0 15px rgba(182, 255, 0, 0.6); /* Brillo verde */
+    transform: translateY(-5px); /* Pequeño salto hacia arriba */
 }
 
 @media (max-width: 991px) { section { padding: 10rem 4% 6rem; } }
@@ -965,7 +968,8 @@ span { color: var(--color-titulos); }
     .menu-icon { display: block; }
     .navbar {
         position: absolute; top: 100%; left: 0; width: 100%;
-        background: #050505; border-top: 1px solid var(--color-titulos);
+        background: #0f111a; 
+        border-top: 1px solid var(--color-titulos);
         display: none; flex-direction: column; padding: 2rem;
     }
     .navbar.active { display: flex; }
@@ -980,15 +984,6 @@ span { color: var(--color-titulos); }
    SECCIÓN INICIO (Con Logo Flotante)
    ========================================= */
 
-#inicio {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
-    flex-wrap: wrap;
-    padding-top: 15rem;
-}
-
 .inicio-logo-container {
     flex: 1 1 300px;
     display: flex;
@@ -1000,7 +995,7 @@ span { color: var(--color-titulos); }
     width: 100%;
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 0 20px rgba(179, 29, 30, 0.4));
+    filter: drop-shadow(0 0 20px rgba(125, 83, 255, 0.4)); /* Brillo Púrpura */
     animation: float 4s ease-in-out infinite;
 }
 
@@ -1014,7 +1009,7 @@ span { color: var(--color-titulos); }
     font-size: 6rem;
     margin: 1rem 0;
     line-height: 1.1;
-    text-shadow: var(--neon-glow);
+    text-shadow: var(--neon-glow); /* Brillo Verde Neón */
 }
 
 .social-media {
@@ -1057,26 +1052,12 @@ span { color: var(--color-titulos); }
 }
 
 /* =========================================
-   FONDOS INTERCALADOS
-   ========================================= */
-
-#sobre-mi, 
-#formacion, 
-#contacto {
-    background-color: #050505;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 0 50px rgba(0,0,0,0.8);
-    border-bottom: none;
-}
-
-/* =========================================
    CORRECCIÓN DE COLORES EN TEXTOS TRADUCIDOS
    ========================================= */
 
 .btn:hover span, 
 .btn-proyecto:hover span {
-    color: #000 !important;
+    color: #1a1a1a !important; 
 }
 
 .contact-card:hover span,

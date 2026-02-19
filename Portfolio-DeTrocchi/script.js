@@ -17,8 +17,8 @@ const translations = {
             'cv_button': 'Descargar CV'
         },
         'sobre-mi': {
-            'title': 'Sobre <span>Mí</span>',
-            'texto_sobreMi': 'Mi principal enfoque está en el desarrollo Front-End, donde diseño e implemento interfaces claras, funcionales y visualmente consistentes, asegurando una correcta integración con servicios de backend y estructuras de datos.<br><br>Abordo el desarrollo priorizando la calidad del código, la organización y la mantenibilidad a largo plazo. Me interesa trabajar en proyectos bien estructurados, donde el diseño y la ingeniería se complementen para ofrecer soluciones confiables y eficientes.'
+        'title': 'Sobre <span>Mí</span>',
+        'texto_sobreMi': 'Me gusta desarrollar productos que se sientan sólidos tanto por fuera como por dentro. Trabajo con una mentalidad orientada al detalle, cuidando la claridad del código, la estructura del proyecto y la experiencia final del usuario.<br><br>Disfruto resolver problemas de forma práctica y aprender mientras construyo. Me interesan los entornos donde se valore el criterio técnico, la autonomía y las ganas de hacer las cosas bien.'
         },
         'habilidades': { 'title': 'Mis <span>Habilidades</span>' },
         'formacion': {
@@ -45,6 +45,9 @@ const translations = {
             'texto-intro': 'Estoy disponible para integrarme a equipos de desarrollo y aportar valor desde el primer día.<br>Podés contactarme por correo o iniciar un chat directo:',
             'btn-email': 'Enviar Correo',
             'btn-whatsapp': 'WhatsApp'
+        },
+        'footer': {
+            'derechos': 'Copyright &copy; 2026 María Victoria De Trocchi | Todos los derechos reservados.'
         }
     },
     'en': {
@@ -64,7 +67,7 @@ const translations = {
         },
         'sobre-mi': {
             'title': 'About <span>Me</span>',
-            'texto_sobreMi': 'My main focus is on Front-End development, where I design and implement clear, functional, and visually consistent interfaces, ensuring proper integration with backend services and data structures.<br><br>I approach development prioritizing code quality, organization, and long-term maintainability. I am interested in working on well-structured projects where design and engineering complement each other to offer reliable and efficient solutions.'
+            'texto_sobreMi': 'I enjoy building products that feel solid both visually and technically. I work with a detail-oriented mindset, focusing on clean structure, readable code, and a smooth user experience. I like solving problems in a practical way and learning by building.<br><br>I’m especially interested in environments that value ownership, good judgment, and doing things with intention.'
         },
         'habilidades': { 'title': 'My <span>Skills</span>' },
         'formacion': {
@@ -91,6 +94,9 @@ const translations = {
             'texto-intro': 'I am available to join development teams and bring value from day one.<br>You can contact me via email or start a direct chat:',
             'btn-email': 'Send Email',
             'btn-whatsapp': 'WhatsApp'
+        },
+        'footer': {
+            'derechos': 'Copyright &copy; 2026 María Victoria De Trocchi | All rights reserved.'
         }
     }
 };

@@ -74,8 +74,8 @@ h3, h5, .skill-title, .proyecto-subtitulo {
 }
 
 p {
-    font-size: 1.6rem;
-    line-height: 1.7;
+    font-size: 1.8rem;
+    line-height: 1.8;
     font-weight: 300;
 }
 
@@ -782,7 +782,7 @@ p {
 .proyectos-container {
     display: flex;
     flex-direction: column;
-    gap: 10rem;
+    gap: 13rem;
     padding: 2rem;
     max-width: 1300px;
     margin: 0 auto;

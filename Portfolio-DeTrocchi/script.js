@@ -38,7 +38,11 @@ const translations = {
             'info-proyecto1': 'Plataforma web Full Stack para la gestión de comedores corporativos. Desarrollada con <strong>Angular</strong> en el frontend y Node.js en el backend. Incorpora actualizaciones en tiempo real con <strong>Socket.io</strong> para el control de stock y pedidos, además de autenticación segura (JWT) y roles de usuario.',
             'title-proyecto2': 'ZummaX',
             'subt-proyecto2': 'Control de Finanzas Personales',
-            'info-proyecto2': 'Aplicación integral para la administración de economía personal. Permite el registro de movimientos, creación de presupuestos y visualización de datos con gráficos interactivos (<strong>Chart.js</strong>). Incluye funciones de exportación a Excel y reportes detallados.'
+            'info-proyecto2': 'Aplicación integral para la administración de economía personal. Permite el registro de movimientos, creación de presupuestos y visualización de datos con gráficos interactivos (<strong>Chart.js</strong>). Incluye funciones de exportación a Excel y reportes detallados.',
+            'btn-demo': 'Ver Demo',
+            'title-proyecto3': 'CLENT',
+            'subt-proyecto3': 'Dashboard de Gestión Financiera',
+            'info-proyecto3': 'CRM financiero desarrollado como Single Page Application (SPA). Permite la gestión integral de clientes y facturación, destacando por su visualización de métricas en tiempo real con gráficos interactivos y la generación instantánea de reportes en PDF.'
         },
         'contacto': {
             'title': 'CONTACTO',
@@ -87,7 +91,11 @@ const translations = {
             'info-proyecto1': 'Full Stack web platform for corporate cafeteria management. Developed with <strong>Angular</strong> on the frontend and Node.js on the backend. Features real-time updates with <strong>Socket.io</strong> for stock and order control, plus secure authentication (JWT) and user roles.',
             'title-proyecto2': 'ZummaX',
             'subt-proyecto2': 'Personal Finance Control',
-            'info-proyecto2': 'Comprehensive application for personal finance management. Allows transaction tracking, budget creation, and data visualization with interactive charts (<strong>Chart.js</strong>). Includes Excel export functions and detailed reports.'
+            'info-proyecto2': 'Comprehensive application for personal finance management. Allows transaction tracking, budget creation, and data visualization with interactive charts (<strong>Chart.js</strong>). Includes Excel export functions and detailed reports.',
+            'btn-demo': 'Live Demo',
+            'title-proyecto3': 'CLENT',
+            'subt-proyecto3': 'Financial Management Dashboard',
+            'info-proyecto3': 'CRM financial built as a Single Page Application (SPA). It enables comprehensive client and invoice management, featuring real-time metric visualization with interactive charts and instant PDF report generation.'
         },
         'contacto': {
             'title': 'CONTACT',
@@ -141,11 +149,12 @@ if (menuIcon && navbar) {
     };
 }
 
-let slideIndex = [1, 1];
-let slideId = ["mySlides1", "mySlides2"];
+let slideIndex = [1, 1, 1];
+let slideId = ["mySlides1", "mySlides2", "mySlides3"];
 
 showSlides(1, 0);
 showSlides(1, 1);
+showSlides(1, 2);
 
 function plusSlides(n, no) {
     showSlides(slideIndex[no] += n, no);
@@ -167,4 +176,6 @@ function showSlides(n, no) {
     if (x[slideIndex[no]-1]) {
         x[slideIndex[no]-1].style.display = "block";  
     }
+
 }
+

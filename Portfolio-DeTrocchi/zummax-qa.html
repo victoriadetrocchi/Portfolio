@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ZummaX – QA Documentation | Victoria De Trocchi</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/ae0fd6f99f.js" crossorigin="anonymous"></script>
+<style>
+:root {
+  --color-titulos: #B6FF00;
+  --color-texto: #E0DADA;
+  --color-accent: #7D53FF;
+  --bg-body: #0f111a;
+  --bg-card: rgba(36, 40, 52, 0.8);
+  --neon-glow: 0 0 15px rgba(182, 255, 0, 0.5);
+  --transicion: all 0.3s ease;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; }
+html { font-size: 62.5%; scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--color-texto); background-color: #0e0f14; min-height: 100vh; overflow-x: hidden; }
+
+header { background: #0e0f14; border-bottom: 1px solid rgba(125,83,255,0.3); padding: 2.5rem 6%; position: sticky; top: 0; z-index: 100; }
+.header-inner { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.back-link { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; color: var(--color-texto); border: 1px solid var(--color-accent); padding: 0.7rem 1.8rem; border-radius: 50px; transition: var(--transicion); display: inline-flex; align-items: center; gap: 0.8rem; }
+.back-link:hover { color: var(--color-titulos); border-color: var(--color-titulos); box-shadow: var(--neon-glow); }
+.qa-badge { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 2px; color: #1a1a1a; background: var(--color-titulos); padding: 0.5rem 1.4rem; border-radius: 50px; text-transform: uppercase; }
+
+.hero { padding: 6rem 6% 5rem; border-bottom: 1px solid rgba(125,83,255,0.2); background: #181b23; }
+.hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: 4.5rem; font-weight: 700; color: var(--color-titulos); text-shadow: var(--neon-glow); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+.hero-sub { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2rem; }
+.hero p { font-size: 1.7rem; color: var(--color-texto); max-width: 700px; line-height: 1.8; font-weight: 300; margin-bottom: 3rem; }
+.meta-row { display: flex; gap: 3rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.meta-item { font-size: 1.4rem; color: #aaa; }
+.meta-item strong { color: var(--color-accent); font-family: 'Space Grotesk', sans-serif; }
+.badges { display: flex; flex-wrap: wrap; gap: 1rem; }
+.badge { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 700; padding: 0.5rem 1.4rem; border: 1px solid var(--color-accent); border-radius: 50px; color: var(--color-accent); background: rgba(125,83,255,0.08); letter-spacing: 0.5px; text-transform: uppercase; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 6rem 6%; }
+.section { margin-bottom: 6rem; }
+.section-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--color-titulos); margin-bottom: 3rem; display: flex; align-items: center; gap: 1.5rem; }
+.section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--color-accent), transparent); box-shadow: 0 0 8px var(--color-accent); }
+
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; margin-bottom: 5rem; }
+.summary-card { background: var(--bg-card); border: 1px solid var(--color-accent); border-radius: 10px; padding: 2.5rem 2rem; text-align: center; transition: var(--transicion); }
+.summary-card:hover { border-color: var(--color-titulos); box-shadow: var(--neon-glow); transform: translateY(-4px); }
+.summary-card .number { font-family: 'Space Grotesk', sans-serif; font-size: 4rem; font-weight: 700; color: var(--color-titulos); text-shadow: var(--neon-glow); }
+.summary-card .label { font-size: 1.2rem; color: #aaa; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+
+.table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid rgba(125,83,255,0.4); }
+table { width: 100%; border-collapse: collapse; font-size: 1.4rem; background: #181b23; }
+thead { background: #0e0f14; border-bottom: 1px solid var(--color-accent); }
+th { padding: 1.4rem 1.6rem; text-align: left; font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--color-accent); white-space: nowrap; }
+td { padding: 1.2rem 1.6rem; border-bottom: 1px solid rgba(125,83,255,0.15); vertical-align: top; color: var(--color-texto); font-size: 1.4rem; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(125,83,255,0.05); }
+
+.pill { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; padding: 0.3rem 1rem; border-radius: 50px; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; }
+.pass { background: rgba(182,255,0,0.12); color: var(--color-titulos); border: 1px solid rgba(182,255,0,0.4); }
+.fail { background: rgba(255,60,60,0.12); color: #ff6b6b; border: 1px solid rgba(255,60,60,0.4); }
+.high { background: rgba(255,60,60,0.12); color: #ff6b6b; border: 1px solid rgba(255,60,60,0.3); }
+.medium { background: rgba(255,165,0,0.12); color: #ffaa40; border: 1px solid rgba(255,165,0,0.3); }
+.low { background: rgba(125,83,255,0.12); color: var(--color-accent); border: 1px solid rgba(125,83,255,0.4); }
+.critical { background: rgba(255,0,80,0.15); color: #ff3060; border: 1px solid rgba(255,0,80,0.4); }
+
+.bug-card { background: var(--bg-card); border: 1px solid rgba(125,83,255,0.4); border-radius: 10px; margin-bottom: 2rem; overflow: hidden; transition: var(--transicion); }
+.bug-card:hover { border-color: var(--color-accent); box-shadow: 0 0 20px rgba(125,83,255,0.2); }
+.bug-header { display: flex; align-items: center; gap: 1.5rem; padding: 1.6rem 2rem; border-bottom: 1px solid rgba(125,83,255,0.2); background: rgba(14,15,20,0.6); flex-wrap: wrap; }
+.bug-id { font-family: 'Space Grotesk', monospace; font-size: 1.2rem; font-weight: 700; color: var(--color-accent); letter-spacing: 1px; }
+.bug-title { font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 1.5rem; color: #fff; flex: 1; }
+.bug-body { padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.bug-field label { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 0.6rem; }
+.bug-field p { font-size: 1.4rem; color: var(--color-texto); font-weight: 300; }
+.bug-field.full { grid-column: 1 / -1; }
+.steps { list-style: none; counter-reset: steps; padding: 0; }
+.steps li { counter-increment: steps; font-size: 1.4rem; padding: 0.4rem 0 0.4rem 2.5rem; position: relative; color: var(--color-texto); font-weight: 300; }
+.steps li::before { content: counter(steps) "."; position: absolute; left: 0; color: var(--color-titulos); font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+code { font-family: monospace; font-size: 1.3rem; background: rgba(125,83,255,0.15); color: var(--color-accent); padding: 0.2rem 0.6rem; border-radius: 4px; }
+
+.api-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; }
+.api-card { background: var(--bg-card); border: 1px solid rgba(125,83,255,0.35); border-radius: 10px; padding: 2rem; transition: var(--transicion); }
+.api-card:hover { border-color: var(--color-titulos); box-shadow: var(--neon-glow); transform: translateY(-3px); }
+.api-method { display: inline-block; font-family: 'Space Grotesk', monospace; font-size: 1.1rem; font-weight: 700; padding: 0.3rem 1rem; border-radius: 4px; margin-bottom: 1rem; letter-spacing: 1px; }
+.GET { background: rgba(0,180,255,0.15); color: #40c0ff; border: 1px solid rgba(0,180,255,0.3); }
+.POST { background: rgba(182,255,0,0.12); color: var(--color-titulos); border: 1px solid rgba(182,255,0,0.3); }
+.PUT { background: rgba(255,165,0,0.12); color: #ffaa40; border: 1px solid rgba(255,165,0,0.3); }
+.DELETE { background: rgba(255,60,60,0.12); color: #ff6b6b; border: 1px solid rgba(255,60,60,0.3); }
+.api-endpoint { font-family: monospace; font-size: 1.4rem; color: #fff; margin-bottom: 0.6rem; }
+.api-desc { font-size: 1.3rem; color: #aaa; font-weight: 300; margin-bottom: 1rem; line-height: 1.5; }
+.api-result { font-size: 1.2rem; display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+footer { text-align: center; padding: 3rem; border-top: 1px solid rgba(125,83,255,0.3); background: #0a0c12; }
+footer p { font-size: 1.4rem; color: #aaa; font-weight: 300; }
+footer a { color: var(--color-titulos); transition: var(--transicion); }
+footer a:hover { text-shadow: var(--neon-glow); }
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 3rem; }
+  .bug-body { grid-template-columns: 1fr; }
+  .bug-field.full { grid-column: 1; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="back-link">← Back to portfolio</a>
+    <span class="qa-badge">QA Documentation</span>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>ZummaX</h1>
+  <div class="hero-sub">Personal Finance Management — Testing Report</div>
+  <p>Full-stack web application for tracking income, expenses, budgets and financial reports. Manual and functional testing performed across all core user flows, REST API endpoints, and authentication mechanisms.</p>
+  <div class="meta-row">
+    <div class="meta-item"><strong>Role:</strong> QA Tester &amp; Developer</div>
+    <div class="meta-item"><strong>Type:</strong> Academic project</div>
+    <div class="meta-item"><strong>Testing:</strong> Manual · Functional · API · Regression</div>
+    <div class="meta-item"><strong>Tools:</strong> Postman · Chrome DevTools · Jira</div>
+  </div>
+  <div class="badges">
+    <span class="badge">HTML · CSS · JavaScript</span>
+    <span class="badge">Node.js · Express</span>
+    <span class="badge">MySQL</span>
+    <span class="badge">JWT Auth</span>
+    <span class="badge">Postman</span>
+    <span class="badge">Chrome DevTools</span>
+    <span class="badge">Jira</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-title">Testing Summary</div>
+    <div class="summary-grid">
+      <div class="summary-card"><div class="number">32</div><div class="label">Test cases</div></div>
+      <div class="summary-card"><div class="number">12</div><div class="label">API endpoints</div></div>
+      <div class="summary-card"><div class="number">8</div><div class="label">Bugs reported</div></div>
+      <div class="summary-card"><div class="number">15</div><div class="label">Use cases covered</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Test Cases</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Module</th><th>Test case</th><th>Precondition</th><th>Expected result</th><th>Priority</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>TC-01</td><td>Register</td><td>Register with valid data</td><td>User not registered</td><td>Account created, redirected to login</td><td><span class="pill high">High</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-02</td><td>Register</td><td>Register with existing email</td><td>Email already in DB</td><td>Error: "Email already registered"</td><td><span class="pill high">High</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-03</td><td>Register</td><td>Register with empty fields</td><td>Form loaded</td><td>Validation errors shown per field</td><td><span class="pill medium">Medium</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-04</td><td>Login</td><td>Login with valid credentials</td><td>User registered</td><td>JWT generated, redirect to dashboard</td><td><span class="pill high">High</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-05</td><td>Login</td><td>Login with wrong password</td><td>User registered</td><td>Error message shown, no redirect</td><td><span class="pill high">High</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-06</td><td>Auth</td><td>Access protected route without token</td><td>User not logged in</td><td>Redirect to login (401)</td><td><span class="pill high">High</span></td><td><span class="pill fail">FAIL</span></td></tr>
+          <tr><td>TC-07</td><td>Movements</td><td>Register income with valid data</td><td>User authenticated</td><td>Movement saved, balance updated</td><td><span class="pill high">High</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-08</td><td>Movements</td><td>Register expense with valid data</td><td>User authenticated</td><td>Movement saved, balance updated</td><td><span class="pill high">High</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-09</td><td>Movements</td><td>Register movement with missing fields</td><td>User authenticated</td><td>Validation error shown, no DB insert</td><td><span class="pill medium">Medium</span></td><td><span class="pill fail">FAIL</span></td></tr>
+          <tr><td>TC-10</td><td>Movements</td><td>Edit an existing movement</td><td>Movement exists</td><td>Updated data saved, balance recalculated</td><td><span class="pill high">High</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-11</td><td>Movements</td><td>Delete a movement</td><td>Movement exists</td><td>Movement removed, balance updated</td><td><span class="pill high">High</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-12</td><td>Balance</td><td>View balance with movements registered</td><td>At least 1 movement</td><td>Correct totals for income, expenses, balance</td><td><span class="pill high">High</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-13</td><td>Balance</td><td>View balance with no movements</td><td>No movements</td><td>Informative empty state message shown</td><td><span class="pill medium">Medium</span></td><td><span class="pill fail">FAIL</span></td></tr>
+          <tr><td>TC-14</td><td>Charts</td><td>View charts with date range filter</td><td>Movements in range</td><td>Chart renders data for selected period</td><td><span class="pill medium">Medium</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-15</td><td>Export</td><td>Export movements as PDF</td><td>Movements exist</td><td>PDF downloaded with correct data</td><td><span class="pill medium">Medium</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-16</td><td>Export</td><td>Export with no data in selected range</td><td>No movements in range</td><td>Informative message, no file generated</td><td><span class="pill low">Low</span></td><td><span class="pill fail">FAIL</span></td></tr>
+          <tr><td>TC-17</td><td>Budget</td><td>Set monthly budget for a category</td><td>User authenticated</td><td>Budget saved and visible in dashboard</td><td><span class="pill medium">Medium</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-18</td><td>Budget</td><td>Trigger budget exceeded alert</td><td>Budget set, expenses exceed limit</td><td>Alert shown with category and amount</td><td><span class="pill high">High</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-19</td><td>Profile</td><td>Edit username</td><td>User authenticated</td><td>New name saved and displayed</td><td><span class="pill low">Low</span></td><td><span class="pill pass">PASS</span></td></tr>
+          <tr><td>TC-20</td><td>Session</td><td>Logout clears session and token</td><td>User logged in</td><td>Token cleared, redirect to login</td><td><span class="pill high">High</span></td><td><span class="pill pass">PASS</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Bug Reports</div>
+
+    <div class="bug-card">
+      <div class="bug-header">
+        <span class="bug-id">BUG-001</span>
+        <span class="bug-title">Protected route accessible without authentication token</span>
+        <span class="pill critical">Critical</span>
+      </div>
+      <div class="bug-body">
+        <div class="bug-field"><label>Module</label><p>Authentication / Route protection</p></div>
+        <div class="bug-field"><label>Related test case</label><p>TC-06</p></div>
+        <div class="bug-field full"><label>Steps to reproduce</label>
+          <ol class="steps">
+            <li>Open the app without logging in</li>
+            <li>Manually navigate to <code>/dashboard</code> in the browser</li>
+            <li>Observe that the page loads with no authentication check</li>
+          </ol>
+        </div>
+        <div class="bug-field"><label>Expected result</label><p>User is redirected to login with a 401 response</p></div>
+        <div class="bug-field"><label>Actual result</label><p>Dashboard renders fully without any authentication</p></div>
+      </div>
+    </div>
+
+    <div class="bug-card">
+      <div class="bug-header">
+        <span class="bug-id">BUG-002</span>
+        <span class="bug-title">No validation error when submitting movement with empty amount</span>
+        <span class="pill high">High</span>
+      </div>
+      <div class="bug-body">
+        <div class="bug-field"><label>Module</label><p>Movements / Form validation</p></div>
+        <div class="bug-field"><label>Related test case</label><p>TC-09</p></div>
+        <div class="bug-field full"><label>Steps to reproduce</label>
+          <ol class="steps">
+            <li>Log in and navigate to "Register movement"</li>
+            <li>Fill all fields except the amount</li>
+            <li>Click "Save"</li>
+          </ol>
+        </div>
+        <div class="bug-field"><label>Expected result</label><p>Validation error on amount field, form does not submit</p></div>
+        <div class="bug-field"><label>Actual result</label><p>Form submits with empty amount, inserting an invalid record in the DB</p></div>
+      </div>
+    </div>
+
+    <div class="bug-card">
+      <div class="bug-header">
+        <span class="bug-id">BUG-003</span>
+        <span class="bug-title">Balance page shows no empty state when user has no movements</span>
+        <span class="pill medium">Medium</span>
+      </div>
+      <div class="bug-body">
+        <div class="bug-field"><label>Module</label><p>Balance / Empty state</p></div>
+        <div class="bug-field"><label>Related test case</label><p>TC-13</p></div>
+        <div class="bug-field full"><label>Steps to reproduce</label>
+          <ol class="steps">
+            <li>Create a new account with no movements</li>
+            <li>Navigate to the Balance section</li>
+            <li>Observe the page content</li>
+          </ol>
+        </div>
+        <div class="bug-field"><label>Expected result</label><p>"No movements registered yet" message guides the user</p></div>
+        <div class="bug-field"><label>Actual result</label><p>Page renders with blank charts and zeroed values, no guidance provided</p></div>
+      </div>
+    </div>
+
+    <div class="bug-card">
+      <div class="bug-header">
+        <span class="bug-id">BUG-004</span>
+        <span class="bug-title">Export generates empty PDF instead of showing informative message</span>
+        <span class="pill low">Low</span>
+      </div>
+      <div class="bug-body">
+        <div class="bug-field"><label>Module</label><p>Export / Edge case</p></div>
+        <div class="bug-field"><label>Related test case</label><p>TC-16</p></div>
+        <div class="bug-field full"><label>Steps to reproduce</label>
+          <ol class="steps">
+            <li>Navigate to "Export data"</li>
+            <li>Select a date range with no registered movements</li>
+            <li>Click "Export PDF"</li>
+          </ol>
+        </div>
+        <div class="bug-field"><label>Expected result</label><p>"No data available for the selected range" message shown</p></div>
+        <div class="bug-field"><label>Actual result</label><p>An empty PDF is generated and downloaded with no content</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">API Testing — Postman</div>
+    <div class="api-grid">
+      <div class="api-card"><div><span class="api-method POST">POST</span></div><div class="api-endpoint">/api/auth/register</div><div class="api-desc">Register new user with name, email, password</div><div class="api-result"><span class="pill pass">201 Created</span><span class="pill fail">409 Conflict</span></div></div>
+      <div class="api-card"><div><span class="api-method POST">POST</span></div><div class="api-endpoint">/api/auth/login</div><div class="api-desc">Authenticate and receive JWT token</div><div class="api-result"><span class="pill pass">200 OK</span><span class="pill fail">401 Unauthorized</span></div></div>
+      <div class="api-card"><div><span class="api-method GET">GET</span></div><div class="api-endpoint">/api/movements</div><div class="api-desc">Retrieve all movements for authenticated user</div><div class="api-result"><span class="pill pass">200 OK</span><span class="pill fail">401 Unauthorized</span></div></div>
+      <div class="api-card"><div><span class="api-method POST">POST</span></div><div class="api-endpoint">/api/movements</div><div class="api-desc">Create new income or expense movement</div><div class="api-result"><span class="pill pass">201 Created</span><span class="pill fail">400 Bad Request</span></div></div>
+      <div class="api-card"><div><span class="api-method PUT">PUT</span></div><div class="api-endpoint">/api/movements/:id</div><div class="api-desc">Update an existing movement by ID</div><div class="api-result"><span class="pill pass">200 OK</span><span class="pill fail">404 Not Found</span></div></div>
+      <div class="api-card"><div><span class="api-method DELETE">DELETE</span></div><div class="api-endpoint">/api/movements/:id</div><div class="api-desc">Delete a movement and recalculate balance</div><div class="api-result"><span class="pill pass">200 OK</span><span class="pill fail">404 Not Found</span></div></div>
+      <div class="api-card"><div><span class="api-method GET">GET</span></div><div class="api-endpoint">/api/balance</div><div class="api-desc">Get total income, expenses and current balance</div><div class="api-result"><span class="pill pass">200 OK</span><span class="pill fail">401 Unauthorized</span></div></div>
+      <div class="api-card"><div><span class="api-method GET">GET</span></div><div class="api-endpoint">/api/categories</div><div class="api-desc">List all available movement categories</div><div class="api-result"><span class="pill pass">200 OK</span></div></div>
+      <div class="api-card"><div><span class="api-method GET">GET</span></div><div class="api-endpoint">/api/budgets</div><div class="api-desc">Get configured budgets per category</div><div class="api-result"><span class="pill pass">200 OK</span><span class="pill fail">401 Unauthorized</span></div></div>
+      <div class="api-card"><div><span class="api-method POST">POST</span></div><div class="api-endpoint">/api/budgets</div><div class="api-desc">Create or update monthly budget for a category</div><div class="api-result"><span class="pill pass">201 Created</span><span class="pill fail">400 Bad Request</span></div></div>
+      <div class="api-card"><div><span class="api-method GET">GET</span></div><div class="api-endpoint">/api/export/pdf</div><div class="api-desc">Export movements as PDF with optional date filter</div><div class="api-result"><span class="pill pass">200 OK</span><span class="pill medium">204 No Content</span></div></div>
+      <div class="api-card"><div><span class="api-method GET">GET</span></div><div class="api-endpoint">/api/user/profile</div><div class="api-desc">Get current user profile data</div><div class="api-result"><span class="pill pass">200 OK</span><span class="pill fail">401 Unauthorized</span></div></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>M. Victoria De Trocchi · QA Tester · <a href="index.html">← Back to portfolio</a></p>
+</footer>
+
+</body>
+</html>

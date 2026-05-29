@@ -12,21 +12,20 @@ const translations = {
         },
         'home': { 
             'home_text-1': 'Hola, soy', 
-            'home_text-3': 'Desarrolladora Web Full Stack', 
+            'home_text-3': 'Desarrolladora Web Full Stack Jr', 
             'parrafo-info': 'Creo aplicaciones web escalables y responsivas, integrando frontend, lógica de backend y bases de datos, con foco en una arquitectura clara, la usabilidad y la mantenibilidad del código.',
             'cv_button': 'Descargar CV'
         },
         'sobre-mi': {
-        'title': 'Sobre <span>Mí</span>',
-        'texto_sobreMi': 'Me gusta desarrollar productos que se sientan sólidos tanto por fuera como por dentro. Trabajo con una mentalidad orientada al detalle, cuidando la claridad del código, la estructura del proyecto y la experiencia final del usuario.<br><br>Disfruto resolver problemas de forma práctica y aprender mientras construyo. Me interesan los entornos donde se valore el criterio técnico, la autonomía y las ganas de hacer las cosas bien.'
+            'title': 'Sobre <span>Mí</span>',
+            'texto_sobreMi': 'Me gusta desarrollar productos que se sientan sólidos tanto por fuera como por dentro. Trabajo con una mentalidad orientada al detalle, cuidando la claridad del código, la estructura del proyecto y la experiencia final del usuario.<br><br>Disfruto resolver problemas de forma práctica y aprender mientras construyo. Me interesan los entornos donde se valore el criterio técnico, la autonomía y las ganas de hacer las cosas bien.'
         },
         'habilidades': { 'title': 'Mis <span>Habilidades</span>' },
         'formacion': {
             'title': 'Mi <span>Formación</span>',
-            'formacion1': 'Tecnicatura en Desarrollo de Software',
-            'tiempo-formacion1': 'IES Santa Fe | 2023 - 2025',
-            'formacion2': 'Desarrollo Web Full Stack',
-            'tiempo-formacion2': 'Prácticas Profesionalizantes & Cursos',
+            'formacion1': 'Tecnicatura Superior en Desarrollo de Software',
+            'tiempo-formacion1': 'I.S.P.I. Nro 9233 "Estudios Superiores de Santa Fe" · 2023–2025',
+            'promedio': 'Promedio: 7,88 / 10 · Título en trámite',
             'formacion3': 'Inglés',
             'tiempo-formacion3': 'Nivel B2 / C1'
         },
@@ -38,15 +37,11 @@ const translations = {
             'info-proyecto1': 'Plataforma web Full Stack para la gestión de comedores corporativos. Desarrollada con <strong>Angular</strong> en el frontend y Node.js en el backend. Incorpora actualizaciones en tiempo real con <strong>Socket.io</strong> para el control de stock y pedidos, además de autenticación segura (JWT) y roles de usuario.',
             'title-proyecto2': 'ZummaX',
             'subt-proyecto2': 'Control de Finanzas Personales',
-            'info-proyecto2': 'Aplicación integral para la administración de economía personal. Permite el registro de movimientos, creación de presupuestos y visualización de datos con gráficos interactivos (<strong>Chart.js</strong>). Incluye funciones de exportación a Excel y reportes detallados.',
-            'btn-demo': 'Ver Demo',
-            'title-proyecto3': 'CLENT',
-            'subt-proyecto3': 'Dashboard de Gestión Financiera',
-            'info-proyecto3': 'CRM financiero desarrollado como Single Page Application (SPA). Permite la gestión integral de clientes y facturación, destacando por su visualización de métricas en tiempo real con gráficos interactivos y la generación instantánea de reportes en PDF.'
+            'info-proyecto2': 'Aplicación integral para la administración de economía personal. Permite el registro de movimientos, creación de presupuestos y visualización de datos con gráficos interactivos (<strong>Chart.js</strong>). Incluye funciones de exportación a Excel y reportes detallados.'
         },
         'contacto': {
             'title': 'CONTACTO',
-            'texto-intro': 'Estoy disponible para integrarme a equipos de desarrollo y aportar valor desde el primer día.<br>Podés contactarme por correo o iniciar un chat directo:',
+            'texto-intro': 'Seleccioná tu canal preferido para hablar:',
             'btn-email': 'Enviar Correo',
             'btn-whatsapp': 'WhatsApp'
         },
@@ -65,21 +60,20 @@ const translations = {
         },
         'home': { 
             'home_text-1': 'Hi, I\'m', 
-            'home_text-3': 'Full Stack Web Developer', 
-            'parrafo-info': 'I build scalable and responsive web applications, integrating frontend, backend logic, and databases, focusing on clear architecture, usability, and code maintainability.',
+            'home_text-3': 'Full Stack Web Developer Jr', 
+            'parrafo-info': 'I build scalable and responsive web applications, integrating frontend, backend logic, and databases, focusing on clean architecture, usability, and code maintainability.',
             'cv_button': 'Download CV'
         },
         'sobre-mi': {
             'title': 'About <span>Me</span>',
-            'texto_sobreMi': 'I enjoy building products that feel solid both visually and technically. I work with a detail-oriented mindset, focusing on clean structure, readable code, and a smooth user experience. I like solving problems in a practical way and learning by building.<br><br>I’m especially interested in environments that value ownership, good judgment, and doing things with intention.'
+            'texto_sobreMi': 'I enjoy building products that feel solid both visually and technically. I work with a detail-oriented mindset, focusing on clean structure, readable code, and a smooth user experience. I like solving problems in a practical way and learning by building.<br><br>I\'m especially interested in environments that value ownership, good judgment, and doing things with intention.'
         },
         'habilidades': { 'title': 'My <span>Skills</span>' },
         'formacion': {
             'title': 'My <span>Education</span>',
             'formacion1': 'Associate Degree in Software Development',
-            'tiempo-formacion1': 'IES Santa Fe | 2023 - 2025',
-            'formacion2': 'Full Stack Web Development',
-            'tiempo-formacion2': 'Professional Practices & Courses',
+            'tiempo-formacion1': 'I.S.P.I. Nro 9233 "Estudios Superiores de Santa Fe" · 2023–2025',
+            'promedio': 'GPA: 7.88 / 10 · Degree in progress',
             'formacion3': 'English',
             'tiempo-formacion3': 'B2 / C1 Level'
         },
@@ -91,15 +85,11 @@ const translations = {
             'info-proyecto1': 'Full Stack web platform for corporate cafeteria management. Developed with <strong>Angular</strong> on the frontend and Node.js on the backend. Features real-time updates with <strong>Socket.io</strong> for stock and order control, plus secure authentication (JWT) and user roles.',
             'title-proyecto2': 'ZummaX',
             'subt-proyecto2': 'Personal Finance Control',
-            'info-proyecto2': 'Comprehensive application for personal finance management. Allows transaction tracking, budget creation, and data visualization with interactive charts (<strong>Chart.js</strong>). Includes Excel export functions and detailed reports.',
-            'btn-demo': 'Live Demo',
-            'title-proyecto3': 'CLENT',
-            'subt-proyecto3': 'Financial Management Dashboard',
-            'info-proyecto3': 'CRM financial built as a Single Page Application (SPA). It enables comprehensive client and invoice management, featuring real-time metric visualization with interactive charts and instant PDF report generation.'
+            'info-proyecto2': 'Comprehensive application for personal finance management. Allows transaction tracking, budget creation, and data visualization with interactive charts (<strong>Chart.js</strong>). Includes Excel export functions and detailed reports.'
         },
         'contacto': {
             'title': 'CONTACT',
-            'texto-intro': 'I am available to join development teams and bring value from day one.<br>You can contact me via email or start a direct chat:',
+            'texto-intro': 'Choose your preferred channel to get in touch:',
             'btn-email': 'Send Email',
             'btn-whatsapp': 'WhatsApp'
         },
@@ -120,7 +110,7 @@ const changeLanguage = (language) => {
         const value = textToChange.dataset.value;
 
         if (texts[section] && texts[section][value]) {
-            if(textToChange.tagName === 'INPUT') {
+            if (textToChange.tagName === 'INPUT') {
                 textToChange.value = texts[section][value]; 
             } else {
                 textToChange.innerHTML = texts[section][value]; 
@@ -149,12 +139,11 @@ if (menuIcon && navbar) {
     };
 }
 
-let slideIndex = [1, 1, 1];
-let slideId = ["mySlides1", "mySlides2", "mySlides3"];
+let slideIndex = [1, 1];
+let slideId = ["mySlides1", "mySlides2"];
 
 showSlides(1, 0);
 showSlides(1, 1);
-showSlides(1, 2);
 
 function plusSlides(n, no) {
     showSlides(slideIndex[no] += n, no);
@@ -166,8 +155,8 @@ function showSlides(n, no) {
     
     if (!x || x.length === 0) return;
 
-    if (n > x.length) { slideIndex[no] = 1 }    
-    if (n < 1) { slideIndex[no] = x.length }
+    if (n > x.length) { slideIndex[no] = 1; }    
+    if (n < 1) { slideIndex[no] = x.length; }
     
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";  
@@ -176,6 +165,4 @@ function showSlides(n, no) {
     if (x[slideIndex[no]-1]) {
         x[slideIndex[no]-1].style.display = "block";  
     }
-
 }
-

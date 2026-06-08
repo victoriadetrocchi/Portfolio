@@ -37,7 +37,10 @@ const translations = {
             'info-proyecto1': 'Plataforma web Full Stack para la gestión de comedores corporativos. Desarrollada con <strong>Angular</strong> en el frontend y Node.js en el backend. Incorpora actualizaciones en tiempo real con <strong>Socket.io</strong> para el control de stock y pedidos, además de autenticación segura (JWT) y roles de usuario.',
             'title-proyecto2': 'ZummaX',
             'subt-proyecto2': 'Control de Finanzas Personales',
-            'info-proyecto2': 'Aplicación integral para la administración de economía personal. Permite el registro de movimientos, creación de presupuestos y visualización de datos con gráficos interactivos (<strong>Chart.js</strong>). Incluye funciones de exportación a Excel y reportes detallados.'
+            'info-proyecto2': 'Aplicación integral para la administración de economía personal. Permite el registro de movimientos, creación de presupuestos y visualización de datos con gráficos interactivos (<strong>Chart.js</strong>). Incluye funciones de exportación a Excel y reportes detallados.',
+            'title-proyecto3': 'App de Servicios',
+            'subt-proyecto3': 'Conectora de Servicios del Hogar',
+            'info-proyecto3': 'Aplicación móvil de doble vía que conecta usuarios con prestadores de oficios locales. Desarrollada con React Native, incluye un tablón geolocalizado (consultas espaciales con MySQL), chat interno mediante WebSockets para negociaciones seguras, y un motor de reputación basado en reseñas.'
         },
         'contacto': {
             'title': 'CONTACTO',
@@ -85,7 +88,10 @@ const translations = {
             'info-proyecto1': 'Full Stack web platform for corporate cafeteria management. Developed with <strong>Angular</strong> on the frontend and Node.js on the backend. Features real-time updates with <strong>Socket.io</strong> for stock and order control, plus secure authentication (JWT) and user roles.',
             'title-proyecto2': 'ZummaX',
             'subt-proyecto2': 'Personal Finance Control',
-            'info-proyecto2': 'Comprehensive application for personal finance management. Allows transaction tracking, budget creation, and data visualization with interactive charts (<strong>Chart.js</strong>). Includes Excel export functions and detailed reports.'
+            'info-proyecto2': 'Comprehensive application for personal finance management. Allows transaction tracking, budget creation, and data visualization with interactive charts (<strong>Chart.js</strong>). Includes Excel export functions and detailed reports.',
+            'title-proyecto3': 'Home Services App',
+            'subt-proyecto3': 'Local Services Connector',
+            'info-proyecto3': 'Two-way mobile app connecting users with local tradespeople. Built with React Native, it features a geolocated job board (MySQL Spatial queries), secure real-time internal chat via WebSockets, and a crowd-sourced review and reputation system.'
         },
         'contacto': {
             'title': 'CONTACT',
@@ -139,11 +145,12 @@ if (menuIcon && navbar) {
     };
 }
 
-let slideIndex = [1, 1];
-let slideId = ["mySlides1", "mySlides2"];
+let slideIndex = [1, 1, 1]; 
+let slideId = ["mySlides1", "mySlides2", "mySlides3"];
 
 showSlides(1, 0);
-showSlides(1, 1);
+showSlides(1, 1); 
+showSlides(1, 2); 
 
 function plusSlides(n, no) {
     showSlides(slideIndex[no] += n, no);
